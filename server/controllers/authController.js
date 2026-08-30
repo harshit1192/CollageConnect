@@ -8,7 +8,7 @@ const sendEmail = require('../utils/sendEmail');
 
 // Only allow registration with college email domains.
 // Update this list (or read from an env var) to match your institution(s).
-const ALLOWED_EMAIL_DOMAINS = ['college.edu', 'university.edu', 'test.edu'];
+const ALLOWED_EMAIL_DOMAINS = ['college.edu', 'university.edu', 'test.edu','gla.ac.in'];
 
 const isCollegeEmail = (email) => {
   const domain = email.split('@')[1]?.toLowerCase();
