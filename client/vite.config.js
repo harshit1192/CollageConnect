@@ -11,11 +11,11 @@ export default defineConfig({
     // and "/uploads/..." without CORS issues or hardcoding a backend host.
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://collageconnect.onrender.com',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'http://localhost:5000',
+        target: 'https://collageconnect.onrender.com',
         changeOrigin: true,
       },
     },
