@@ -3,7 +3,7 @@ import axios from 'axios';
 // Centralized axios instance. All future API calls (auth, posts, etc.)
 // should import this instead of creating new axios instances.
 const api = axios.create({
-  baseURL: '/api', // proxied to http://localhost:5000/api by vite.config.js in dev
+  baseURL: 'https://collageconnect.onrender.com', // proxied to http://localhost:5000/api by vite.config.js in dev
   headers: {
     'Content-Type': 'application/json',
   },
