@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import LikeButton from './LikeButton';
 import CommentSection from './CommentSection';
 import { updatePost, deletePost, reportPost } from '../services/postService';
+import { resolveImageUrl } from '../utils/urlUtils';
 
 const REPORT_REASONS = [
   'Spam',
@@ -135,7 +136,7 @@ export default function PostCard({ post, onDeleted }) {
       {current.images?.length > 0 && (
         <div className={`mt-3 grid gap-2 ${current.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
           {current.images.map((src) => (
-            <img key={src} src={src} alt="Post attachment" className="rounded-lg w-full object-cover max-h-80" />
+            <img key={src} src={resolveImageUrl(src)} alt="Post attachment" className="rounded-lg w-full object-cover max-h-80" />
           ))}
         </div>
       )}

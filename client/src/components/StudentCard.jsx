@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { resolveImageUrl } from '../utils/urlUtils';
 
 export default function StudentCard({ student }) {
   const avatarSrc = student.profilePicture
-    ? student.profilePicture
+    ? resolveImageUrl(student.profilePicture)
     : `https://ui-avatars.com/api/?name=${encodeURIComponent(student.fullName)}&background=3b6ff2&color=fff`;
 
   return (

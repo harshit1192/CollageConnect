@@ -12,6 +12,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { resolveImageUrl } from '../utils/urlUtils';
 
 export default function Sidebar() {
   const { user } = useAuth();
@@ -108,7 +109,7 @@ export default function Sidebar() {
         >
           <img
             src={
-              user?.profilePicture ||
+              resolveImageUrl(user?.profilePicture) ||
               `https://ui-avatars.com/api/?name=${encodeURIComponent(
                 user?.fullName || 'U'
               )}&background=3b6ff2&color=fff`

@@ -6,6 +6,7 @@ import { getConversations } from '../services/messageService';
 import NotificationBell from './NotificationBell';
 import GlobalSearchBar from './GlobalSearchBar';
 import { Menu, LogOut, Bell, MessageSquare } from 'lucide-react';
+import { resolveImageUrl } from '../utils/urlUtils';
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -82,7 +83,7 @@ export default function Header() {
           className="flex items-center gap-3 p-1 pr-3 rounded-full hover:bg-gray-100 transition-colors group"
         >
           <img
-            src={user?.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.fullName || 'U')}&background=3b6ff2&color=fff`}
+            src={resolveImageUrl(user?.profilePicture) || `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.fullName || 'U')}&background=3b6ff2&color=fff`}
             alt={user?.fullName}
             className="w-8 h-8 rounded-full object-cover border border-gray-200"
           />

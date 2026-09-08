@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { resolveImageUrl } from '../utils/urlUtils';
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleString(undefined, {
@@ -12,7 +13,7 @@ function formatDate(dateStr) {
 
 export default function EventCard({ event }) {
   const imgSrc = event.image
-    ? event.image
+    ? resolveImageUrl(event.image)
     : `https://ui-avatars.com/api/?name=${encodeURIComponent(event.title)}&background=3b6ff2&color=fff&size=256`;
 
   return (
